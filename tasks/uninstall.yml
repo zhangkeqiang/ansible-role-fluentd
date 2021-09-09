@@ -11,7 +11,7 @@
   - name: remove td-agent GPG key.
     rpm_key:
       state: absent
-      key: gpg-pubkey-ab97acbe-586223cc
+      key: GPG-KEY-td-agent
     become: yes
       
 
