@@ -9,9 +9,7 @@
     become: yes
 
   - name: remove td-agent GPG key.
-    rpm_key:
-      state: absent
-      key: 586223cc
+    shell: rpm -e --allmatches gpg-pubkey-ab97acbe-586223cc
     become: yes
       
 
