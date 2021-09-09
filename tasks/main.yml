@@ -5,9 +5,7 @@
   package:
     name: td-agent
     state: "{{ fluentd_package_state }}"
-    owner: root
-    group: root
-    mode: 0644
+  become: yes
 
 - name: Configure Fluentd.
   template:
