@@ -1,14 +1,13 @@
 ---
 - include_tasks: setup-RedHat.yml
-  when: ansible_os_family == 'RedHat'
-
-- include_tasks: setup-Debian.yml
-  when: ansible_os_family == 'Debian'
 
 - name: Install td-agent.
   package:
     name: td-agent
     state: "{{ fluentd_package_state }}"
+    owner: root
+    group: root
+    mode: 0644
 
 - name: Configure Fluentd.
   template:
@@ -18,6 +17,7 @@
     group: root
     mode: 0644
   notify: restart fluentd
+
 
 - name: Determine fluent-gem executable location for td-agent < v4
   set_fact:
