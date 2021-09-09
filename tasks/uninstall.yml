@@ -1,0 +1,18 @@
+---
+- name: Clean fluentd
+  hosts: demo
+  tasks:
+  - name: uninstall fluentd
+    yum:
+      name: td-agent
+      state: absent
+
+  - name: remove td-agent GPG key.
+    rpm_key:
+      key: https://packages.treasuredata.com/GPG-KEY-td-agent
+      state: absent
+
+  - name: delete /etc/yum.repos.d/td.repo
+    file: 
+      path: /etc/yum.repos.d/td.repo
+      state: absent
