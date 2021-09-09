@@ -3,7 +3,7 @@
   hosts: demo
   tasks:
   - name: uninstall fluentd
-    shell: sudo yum remove td-agent
+    shell: yum remove td-agent
 
   - name: remove td-agent GPG key.
     rpm_key:
