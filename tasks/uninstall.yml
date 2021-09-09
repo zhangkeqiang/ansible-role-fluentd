@@ -2,8 +2,10 @@
 - name: Clean fluentd
   hosts: demo
   tasks:
-  - name: uninstall fluentd
-    shell: yum remove td-agent
+  - name: yum remove td-agent
+    yum:
+      name: td-agent
+      state: absent
 
   - name: remove td-agent GPG key.
     rpm_key:
