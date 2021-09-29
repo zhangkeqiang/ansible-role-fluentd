@@ -1,0 +1,8 @@
+---
+#setup httpd and call its role
+- hosts: demo
+  remote_user: ansible
+  become: true
+  roles:
+    - ansible-role-fluentd
+
