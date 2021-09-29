@@ -1,7 +1,7 @@
 ---
 #setup httpd and call its role
 - hosts: all
-  remote_user: infradevops
+  # remote_user: infradevops
   become: true
   roles:
     - ansible-role-httpd
