@@ -1,8 +1,8 @@
 ---
 #setup httpd and call its role
-- hosts: demo
-  remote_user: ansible
-  become: true
+- hosts: all
+  #remote_user: infradevops
+  become: no
   roles:
     - ansible-role-fluentd
 
