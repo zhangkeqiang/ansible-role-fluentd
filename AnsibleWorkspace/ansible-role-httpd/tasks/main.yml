@@ -1,0 +1,17 @@
+---
+# tasks file for ansible-role-httpd
+- name: Install httpd
+  include: install.yml
+  when: httpd_state == "present"
+
+- name: Config httpd
+  include: configure.yml
+  when: httpd_state == "present"
+
+- name: Enable httpd
+  include: service.yml
+  when: httpd_state == "present"
+
+- name: Uninstall httpd
+  include: uninstall.yml
+  when: httpd_state == "absent"

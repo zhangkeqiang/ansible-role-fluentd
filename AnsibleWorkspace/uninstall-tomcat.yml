@@ -1,0 +1,7 @@
+- hosts: demo
+  remote_user: ansible
+  become: true
+  vars:
+    tomcat_state: absent
+  roles:
+    - role: ansible-role-tomcat

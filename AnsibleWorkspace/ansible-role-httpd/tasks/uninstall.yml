@@ -1,0 +1,6 @@
+---
+# Task to uninstal httpd
+- name: Uninstall httpd
+  yum:
+    name: "httpd*"
+    state: absent

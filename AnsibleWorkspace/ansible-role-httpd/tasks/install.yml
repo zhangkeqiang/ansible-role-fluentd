@@ -1,0 +1,7 @@
+---
+#tasks for install.yml file
+- name: Install httpd package
+  yum: 
+    name: "httpd-{{ httpd_version }}"
+    state: present
+

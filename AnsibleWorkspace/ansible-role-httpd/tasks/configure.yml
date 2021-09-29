@@ -1,0 +1,6 @@
+---
+#tasks for configure.yml file
+- name: Copy index.html file
+  copy: src=files/index.html dest=/var/www/html
+  notify:
+  - restart ansible-role-httpd

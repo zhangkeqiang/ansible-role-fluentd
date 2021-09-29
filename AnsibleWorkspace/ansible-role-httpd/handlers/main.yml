@@ -1,0 +1,4 @@
+---
+# handlers file for ansible-role-httpd
+- name: restart ansible-role-httpd
+  service: name=httpd state=restarted

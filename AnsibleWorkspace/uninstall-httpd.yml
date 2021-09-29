@@ -1,0 +1,9 @@
+---
+#setup httpd and call its role
+- hosts: demo
+  remote_user: ansible
+  become: true
+  vars:
+    httpd_state: absent
+  roles:
+    - role: ansible-role-httpd
